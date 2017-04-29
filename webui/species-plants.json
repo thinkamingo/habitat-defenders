@@ -1,8 +1,8 @@
 {
     "type": "SpeciesCollection",
     "species": [{
-    "name": "Air Potato", "id": 1,
+    "name": "Air Potato", "id": 1
     }, {
-    "name": "Duckweed", "id": 2,
+    "name": "Duckweed", "id": 2
     }]
 }

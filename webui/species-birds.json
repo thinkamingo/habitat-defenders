@@ -1,8 +1,8 @@
 {
     "type": "SpeciesCollection",
     "species": [{
-    "name": "Duck", "id": 1,
+    "name": "Duck", "id": 1
     }, {
-    "name": "Fire Ant", "id": 2,
+    "name": "Fire Ant", "id": 2
     }]
 }

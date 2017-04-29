@@ -21,23 +21,15 @@ height:400px;
 
 <div class="container">
   <div class="row">
-    <div class="hidden-xs col-sm-2 col-md-offset-1" style="backgroind-color: cyan"></div>
+    <div class="hidden-xs col-sm-2 col-md-offset-1" style="background-color: cyan"></div>
     <div class="about col-xs-12 col-sm-10 col-md-8" style="background-color: red">
 
       <label for="sel1">Select list (select one):</label>
-      <select class="form-control" id="sel1">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
+      <select class="form-control" id="meta">
       </select>
 
       <label for="sel1">Select list (select one):</label>
-      <select class="form-control" id="sel1">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
+      <select class="form-control" id="species">
       </select>
 
 </div>
@@ -48,19 +40,44 @@ height:400px;
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script>
+var speciesMeta;
 
-var jsonData = $.parseJSON("data"));
+$(document).ready(function(){
 
-var $select = $('#mySelectID');
-$(jsonData).each(function (index, o) {    
-    var $option = $("<option/>").attr("value", o.CODE).text(o.NAMEVAR);
-    $select.append($option);
+	$.getJSON('species-meta.json', function(result) {
+		speciesMeta = result.speciesMeta;
+		var options = $("#meta");
+		options.empty();
+		$.each(result.speciesMeta, function(i,item) {
+			options.append($("<option />").val(item.json).text(item.name));
+		});
+		$.getJSON(speciesMeta[0].json, function(result) {
+			var options = $("#species");
+			options.empty();
+			$.each(result.species, function(i,item) {
+				options.append($("<option />").val(item.id).text(item.name));
+			});
+		});
+	});
+
+
+
+	$( "#meta" ).change(function() {
+		//alert( "Handler for .change() called." );
+//alert(speciesMeta[$("#meta").prop('selectedIndex')].json);
+
+			$.getJSON(speciesMeta[$("#meta").prop('selectedIndex')].json, function(result) {
+				var options = $("#species");
+				options.empty();
+				$.each(result.species, function(i,item) {
+					options.append($("<option />").val(item.id).text(item.name));
+				});
+			});
+	});
+
 });
 
 </script>
-<script async defer 
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAHFkF69g_I5w5anCzCndeOvjmaPHdCV4&callback=initMap"></script>
-
 
 </body>
 </html>

@@ -1,8 +1,12 @@
 {
-    "type": "SpeciesMetaCollection",
-    "speciesMeta": [{
-    "name": "Plants", "id": 1, "json": "species-plants.json",
-    }, {
-    "name": "Birds", "id": 2, "json": "species-birds.json",
-    }]
+	"type": "SpeciesMetaCollection",
+	"speciesMeta": [{
+		"name": "Plants",
+		"id": 1,
+		"json": "species-plants.json"
+	}, {
+		"name": "Birds",
+		"id": 2,
+		"json": "species-birds.json"
+	}]
 }
