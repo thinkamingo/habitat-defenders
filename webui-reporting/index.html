@@ -32,29 +32,22 @@ height:400px;
   </div>
 
 </div>
-
 </div>
 </div>
-
-
-
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script>
-function myMap() {
+function initMap() {
     var mapCanvas = document.getElementById("map");
     var myLatLng = {lat: 27.9618157, lng: -82.4446295};
-
   var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 16,
+    zoom: 17,
     center: myLatLng
   });
-
 map.data.loadGeoJson('sample.json');
 
-/*
   var marker = new google.maps.Marker({
     position: myLatLng,
     map: map,
@@ -62,7 +55,6 @@ map.data.loadGeoJson('sample.json');
     title: 'Hello World!',
     draggable: true
   });
-*/
 
 google.maps.event.addListener(marker, 'dragend', function (event) {
     document.getElementById("latbox").value = this.getPosition().lat();
@@ -71,7 +63,8 @@ google.maps.event.addListener(marker, 'dragend', function (event) {
     
 }
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAHFkF69g_I5w5anCzCndeOvjmaPHdCV4&callback=myMap"></script>
+<script async defer 
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAHFkF69g_I5w5anCzCndeOvjmaPHdCV4&callback=initMap"></script>
 
 
 </body>

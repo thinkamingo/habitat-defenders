@@ -1,26 +1,25 @@
 {
     "type": "FeatureCollection",
     "features": [{
-	"type": "Feature",
+    "type": "Feature",
         "id": 1,
-	"geometry": {
-	    "type": "Point",
-	    "coordinates": [27.9618157, -82.4446295]
-	},
-	"properties": {
-	    "title": "P",
-	    "xicon": "monument"
-	}
+    "geometry": {
+        "type": "Point",
+        "coordinates": [-82.4447295, 27.9619157]
+    },
+    "properties": {
+        "title": "P",
+        "xicon": "monument"
+    }
     }, {
-	"type": "Feature",
-	"geometry": {
-	    "type": "Point",
-	    "coordinates": [27.9418157, -82.4646295]
-	},
-	"properties": {
-	    "title": "Q",
-	    "xicon": "harbor"
-	}
+    "type": "Feature",
+    "geometry": {
+        "type": "Point",
+        "coordinates": [-82.4445295, 27.9617157]
+    },
+    "properties": {
+        "title": "Q",
+        "xicon": "harbor"
+    }
     }]
 }
-
