@@ -1,0 +1,100 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Habitat Defender</title>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<style>
+#map {
+width:400px;
+height:400px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="row">
+    <div class="hidden-xs col-sm-2 col-md-offset-1" style="backgroind-color: cyan"></div>
+    <div class="about col-xs-12 col-sm-10 col-md-8" style="background-color: red">
+
+<div id="map">My map will go here</div>
+
+  <div id="latlong">
+    <p>Latitude: <input size="20" type="text" id="latbox" name="lat" ></p>
+    <p>Longitude: <input size="20" type="text" id="lngbox" name="lng" ></p>
+  </div>
+
+</div>
+</div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script>
+function initMap() {
+    var mapCanvas = document.getElementById("map");
+    var myLatLng = {lat: 27.9618157, lng: -82.4446295};
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 17,
+    center: myLatLng
+  });
+
+
+map.data.loadGeoJson('sample.json');
+
+
+map.data.setStyle(function(feature) {
+          var color = 'gray';
+          if (feature.getProperty('isColorful')) {
+            color = feature.getProperty('color');
+          }
+          return /** @type {google.maps.Data.StyleOptions} */({
+            fillColor: color,
+            strokeColor: color,
+            strokeWeight: 2
+          });
+        });
+
+
+map.data.setStyle({
+  fillColor: 'green',
+  strokeWeight: 3
+});
+
+
+  var marker = new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+    label: "X",
+    title: 'Hello World!',
+    draggable: true
+  });
+
+google.maps.event.addListener(marker, 'dragend', function (event) {
+    document.getElementById("latbox").value = this.getPosition().lat();
+    document.getElementById("lngbox").value = this.getPosition().lng();
+});
+
+/* 
+
+demo bounds
+28.049258, -82.536154
+27.943157, -82.379942
+*/
+    
+}
+</script>
+<script async defer 
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAHFkF69g_I5w5anCzCndeOvjmaPHdCV4&callback=initMap"></script>
+
+
+</body>
+</html>
