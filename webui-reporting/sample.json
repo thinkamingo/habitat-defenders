@@ -1,0 +1,26 @@
+{
+    "type": "FeatureCollection",
+    "features": [{
+	"type": "Feature",
+        "id": 1,
+	"geometry": {
+	    "type": "Point",
+	    "coordinates": [27.9618157, -82.4446295]
+	},
+	"properties": {
+	    "title": "P",
+	    "xicon": "monument"
+	}
+    }, {
+	"type": "Feature",
+	"geometry": {
+	    "type": "Point",
+	    "coordinates": [27.9418157, -82.4646295]
+	},
+	"properties": {
+	    "title": "Q",
+	    "xicon": "harbor"
+	}
+    }]
+}
+
