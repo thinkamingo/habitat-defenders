@@ -21,6 +21,9 @@ background-size: cover;
 width:100%;
 height:400px;
 }
+.controlcontainer {
+padding: 10px 0 0 0;
+}
 </style>
 </head>
 <body>
@@ -30,24 +33,28 @@ height:400px;
     <div class="hidden-xs col-sm-2 col-md-offset-1" style="background-color: cyan"></div>
     <div class="about col-xs-12 col-sm-10 col-md-8" style="background-color: red">
 
-      <label for="sel1">Select list (select one):</label>
+<div class="controlcontainer">
       <select class="form-control" id="meta">
       </select>
+</div>
 
-      <label for="sel1">Select list (select one):</label>
+<div class="controlcontainer">
       <select class="form-control" id="species">
       </select>
+</div>
 
-            <div class="form-group">
+            <div class="form-group controlcontainer">
                 <div class='input-group date' id='datetimepicker1'>
-                    <input type='text' class="form-control" />
+                    <input type='text' class="form-control"></input>
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
                 </div>
             </div>
 <div id="map">My map will go here</div>
-
+<div class="controlcontainer">
+<button id="report" type="button" class="btn btn-success">Report</button>
+</div>
 </div>
 </div>
 </div>

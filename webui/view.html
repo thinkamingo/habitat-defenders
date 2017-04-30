@@ -20,22 +20,25 @@ background-size: cover;
 width:100%;
 height:400px;
 }
+.controlcontainer {
+padding: 20px 0 0 0;
+}
 </style>
 </head>
 <body>
 
 <div class="container">
   <div class="row">
-    <div class="hidden-xs col-sm-2 col-md-offset-1" style="backgroind-color: cyan"></div>
-    <div class="about col-xs-12 col-sm-10 col-md-8" style="background-color: red">
+    <div class="hidden-xs col-sm-1 col-md-1" style="backgroind-color: cyan"></div>
+    <div class="about col-xs-12 col-sm-10 col-md-10" style="background-color: red">
 
-<div>
+<div class="controlcontainer">
       <select class="form-control" id="meta">
     <option>Plants</option>
     <option>Freshwater Fish</option>
       </select>
 </div>
-<div>
+<div class="controlcontainer">
       <select class="form-control" id="species">
     <option>Air potato, potato yam</option>
     <option>American evergreen, arrowhead vine</option>
@@ -44,9 +47,10 @@ height:400px;
       </select>
 
 </div>
+<div class="controlcontainer" style="height: 10px"></div>
 
 
-<div id="map">My map will go here</div>
+<div id="map" class="controlcontainer">My map will go here</div>
 
 <!--
   <div id="latlong">
@@ -116,9 +120,25 @@ function randomMarkers() {
 markers = [];
 
 var marker;
+for(i=0;i<10;i++) {
+
+var delta = 0.0050;
+var pos = {lat: 27.9618157 + (Math.random() * (delta + delta) - delta),
+lng: -82.4446295 + (Math.random() * (delta + delta) - delta)
+};
+marker  = new google.maps.Marker({
+    position: pos,
+    map: map,
+    //label: "X",
+    title: 'Air potato',
+    draggable: false
+  });
+markers.push(marker);
+}
+
 for(i=0;i<30;i++) {
 
-var delta = 0.0055;
+var delta = 0.0200;
 var pos = {lat: 27.9618157 + (Math.random() * (delta + delta) - delta),
 lng: -82.4446295 + (Math.random() * (delta + delta) - delta)
 };
