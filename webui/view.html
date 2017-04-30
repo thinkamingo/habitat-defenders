@@ -31,6 +31,7 @@ height:400px;
     <p>Longitude: <input size="20" type="text" id="lngbox" name="lng" ></p>
   </div>
 
+
 </div>
 </div>
 </div>
@@ -39,35 +40,52 @@ height:400px;
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script>
+
+/*
+// Needs a https site - later
+function error() {
+    alert("could not determine location");
+}
+
+function success(position) {
+	var latitude  = position.coords.latitude;
+	var longitude = position.coords.longitude;
+
+    document.getElementById("latbox").value = latitude;
+    document.getElementById("lngbox").value = longitude;
+	//output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
+}
+
+if (navigator.geolocation) {
+	navigator.geolocation.getCurrentPosition(success, error);
+}
+*/
+
 function initMap() {
     var mapCanvas = document.getElementById("map");
     var myLatLng = {lat: 27.9618157, lng: -82.4446295};
   var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 17,
+    zoom: 19,
     center: myLatLng
   });
 
 
 map.data.loadGeoJson('sample.json');
 
+/*
+map.data.setStyle({
+  title: 'title' 
+});
+*/
 
 map.data.setStyle(function(feature) {
-          var color = 'gray';
-          if (feature.getProperty('isColorful')) {
-            color = feature.getProperty('color');
-          }
-          return /** @type {google.maps.Data.StyleOptions} */({
-            fillColor: color,
-            strokeColor: color,
-            strokeWeight: 2
-          });
-        });
-
-
-map.data.setStyle({
-  fillColor: 'green',
-  strokeWeight: 3
+  console.log(feature);
+  return ({
+    title: feature.getProperty('title'),
+    label: feature.getProperty('title')
+  });
 });
+
 
 
   var marker = new google.maps.Marker({
@@ -77,6 +95,8 @@ map.data.setStyle({
     title: 'Hello World!',
     draggable: true
   });
+
+console.log(map.data);
 
 google.maps.event.addListener(marker, 'dragend', function (event) {
     document.getElementById("latbox").value = this.getPosition().lat();

@@ -18,7 +18,17 @@
         "coordinates": [-82.4445295, 27.9617157]
     },
     "properties": {
-        "title": "Q",
+        "title": "💀",
+        "icon": "harbor"
+    }
+    }, {
+    "type": "Feature",
+    "geometry": {
+        "type": "Point",
+        "coordinates": [-82.4448295, 27.9616157]
+    },
+    "properties": {
+        "title": "R",
         "icon": "harbor"
     }
     }]
