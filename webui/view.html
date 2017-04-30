@@ -11,8 +11,13 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
 <style>
+.about {
+height: 100%;
+background-image: url('background.jpg');
+background-size: cover;
+}
 #map {
-width:400px;
+width:100%;
 height:400px;
 }
 </style>
@@ -24,13 +29,31 @@ height:400px;
     <div class="hidden-xs col-sm-2 col-md-offset-1" style="backgroind-color: cyan"></div>
     <div class="about col-xs-12 col-sm-10 col-md-8" style="background-color: red">
 
+<div>
+      <select class="form-control" id="meta">
+    <option>Plants</option>
+    <option>Freshwater Fish</option>
+      </select>
+</div>
+<div>
+      <select class="form-control" id="species">
+    <option>Air potato, potato yam</option>
+    <option>American evergreen, arrowhead vine</option>
+    <option>Aquatic soda apple</option>
+    <option>Asian sword fern</option>
+      </select>
+
+</div>
+
+
 <div id="map">My map will go here</div>
 
+<!--
   <div id="latlong">
     <p>Latitude: <input size="20" type="text" id="latbox" name="lat" ></p>
     <p>Longitude: <input size="20" type="text" id="lngbox" name="lng" ></p>
   </div>
-
+-->
 
 </div>
 </div>
@@ -39,9 +62,15 @@ height:400px;
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 <script>
 
-/*
+var markers = [];
+var myLatLng;
+
+
+
+
 // Needs a https site - later
 function error() {
     alert("could not determine location");
@@ -59,18 +88,64 @@ function success(position) {
 if (navigator.geolocation) {
 	navigator.geolocation.getCurrentPosition(success, error);
 }
-*/
+
 
 function initMap() {
     var mapCanvas = document.getElementById("map");
-    var myLatLng = {lat: 27.9618157, lng: -82.4446295};
+    myLatLng = {lat: 27.9618157, lng: -82.4446295};
   var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 19,
+    zoom: 16,
     center: myLatLng
   });
 
 
-map.data.loadGeoJson('sample.json');
+	$( "#species" ).change(function() {
+randomMarkers();
+	});
+
+randomMarkers();
+
+
+function randomMarkers() {
+
+// clear markers
+  for (var i = 0; i < markers.length; i++) {
+          markers[i].setMap(null);
+        }
+
+markers = [];
+
+var marker;
+for(i=0;i<30;i++) {
+
+var delta = 0.0055;
+var pos = {lat: 27.9618157 + (Math.random() * (delta + delta) - delta),
+lng: -82.4446295 + (Math.random() * (delta + delta) - delta)
+};
+
+console.log(pos);
+
+marker  = new google.maps.Marker({
+    position: pos,
+    map: map,
+    //label: "X",
+    title: 'Air potato',
+    draggable: false
+  });
+markers.push(marker);
+}
+}
+
+marker  = new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+    //label: "X",
+    title: 'Our location',
+    icon: 'bluedot.png',
+    draggable: false
+  });
+
+//map.data.loadGeoJson('sample.json');
 
 /*
 map.data.setStyle({
@@ -81,27 +156,21 @@ map.data.setStyle({
 map.data.setStyle(function(feature) {
   console.log(feature);
   return ({
-    title: feature.getProperty('title'),
+    title: feature.getProperty('description'),
     label: feature.getProperty('title')
   });
 });
 
 
 
-  var marker = new google.maps.Marker({
-    position: myLatLng,
-    map: map,
-    label: "X",
-    title: 'Hello World!',
-    draggable: true
-  });
+ console.log(map.data);
 
-console.log(map.data);
-
+/*
 google.maps.event.addListener(marker, 'dragend', function (event) {
     document.getElementById("latbox").value = this.getPosition().lat();
     document.getElementById("lngbox").value = this.getPosition().lng();
 });
+*/
 
 /* 
 
@@ -112,8 +181,7 @@ demo bounds
     
 }
 </script>
-<script async defer 
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAHFkF69g_I5w5anCzCndeOvjmaPHdCV4&callback=initMap"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAHFkF69g_I5w5anCzCndeOvjmaPHdCV4&callback=initMap"></script>
 
 
 </body>

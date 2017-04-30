@@ -5,8 +5,28 @@
 		"id": 1,
 		"json": "species-plants.json"
 	}, {
-		"name": "Birds",
+		"name": "Freshwater Fish",
 		"id": 2,
+		"json": "species-fish.json"
+	}, {
+		"name": "Marine Life",
+		"id": 3,
+		"json": "species-marine.json"
+	}, {
+		"name": "Amphibians",
+		"id": 4,
+		"json": "species-amphibians.json"
+	}, {
+		"name": "Reptiles",
+		"id": 5,
+		"json": "species-reptiles.json"
+	}, {
+		"name": "Birds",
+		"id": 6,
 		"json": "species-birds.json"
+	}, {
+		"name": "Mammals",
+		"id": 7,
+		"json": "species-mammals.json"
 	}]
 }

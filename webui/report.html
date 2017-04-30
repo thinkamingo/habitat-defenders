@@ -9,10 +9,16 @@
 
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
 
 <style>
+.about {
+height: 100%;
+background-image: url('background.jpg');
+background-size: cover;
+}
 #map {
-width:400px;
+width:100%;
 height:400px;
 }
 </style>
@@ -32,13 +38,32 @@ height:400px;
       <select class="form-control" id="species">
       </select>
 
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+<div id="map">My map will go here</div>
+
 </div>
 </div>
 </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+
 <script>
 var speciesMeta;
 
@@ -78,6 +103,73 @@ $(document).ready(function(){
 });
 
 </script>
+
+<script type="text/javascript">
+    $(function () {
+	$('#datetimepicker1').datetimepicker();
+    });
+</script>
+<script>
+
+/*
+// Needs a https site - later
+function error() {
+    alert("could not determine location");
+}
+
+function success(position) {
+	var latitude  = position.coords.latitude;
+	var longitude = position.coords.longitude;
+
+    document.getElementById("latbox").value = latitude;
+    document.getElementById("lngbox").value = longitude;
+	//output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
+}
+
+if (navigator.geolocation) {
+	navigator.geolocation.getCurrentPosition(success, error);
+}
+
+*/
+
+function initMap() {
+    var mapCanvas = document.getElementById("map");
+    var myLatLng = {lat: 27.9618157, lng: -82.4446295};
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 19,
+    center: myLatLng
+  });
+
+
+  var marker = new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+    label: "X",
+    title: 'Sighting',
+    draggable: true
+  });
+
+console.log(map.data);
+
+google.maps.event.addListener(marker, 'dragend', function (event) {
+    document.getElementById("latbox").value = this.getPosition().lat();
+    document.getElementById("lngbox").value = this.getPosition().lng();
+});
+
+/* 
+
+demo bounds
+28.049258, -82.536154
+27.943157, -82.379942
+*/
+    
+}
+</script>
+
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAHFkF69g_I5w5anCzCndeOvjmaPHdCV4&callback=initMap"></script>
+
+
 
 </body>
 </html>

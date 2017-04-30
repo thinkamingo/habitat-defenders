@@ -9,6 +9,7 @@
     },
     "properties": {
         "title": "P",
+        "description": "ducks",
         "icon": "monument"
     }
     }, {
@@ -19,6 +20,7 @@
     },
     "properties": {
         "title": "💀",
+        "description": "fire ants",
         "icon": "harbor"
     }
     }, {
@@ -29,6 +31,7 @@
     },
     "properties": {
         "title": "R",
+        "description": "air potato",
         "icon": "harbor"
     }
     }]

@@ -12,7 +12,19 @@
 
 <style>
 .about {
-height: 300px;
+height: 100%;
+background-image: url('background.jpg');
+background-size: cover;
+}
+.btn {
+position: absolute;
+bottom: 10;
+}
+#report {
+left: 10;
+}
+#view {
+left: 100;
 }
 </style>
 </head>
@@ -20,8 +32,8 @@ height: 300px;
 
 <div class="container">
   <div class="row">
-    <div class="hidden-xs col-sm-2 col-md-offset-1" style="backgroind-color: cyan"></div>
-    <div class="about col-xs-12 col-sm-10 col-md-8" style="background-color: red">
+    <div class="hidden-xs col-sm-2 col-md-offset-1"></div>
+    <div class="about col-xs-12 col-sm-10 col-md-8">
 <button id="report" type="button" class="btn btn-success">Report</button>
 <button id="view" type="button" class="btn btn-success">View</button>
 

@@ -1,8 +1,152 @@
 {
     "type": "SpeciesCollection",
     "species": [{
-    "name": "Air Potato", "id": 1
+    "name": "Air potato, potato yam", "id": 1
     }, {
-    "name": "Duckweed", "id": 2
+    "name": "American evergreen, arrowhead vine", "id": 2
+    }, {
+    "name": "Aquatic soda apple", "id": 3
+    }, {
+    "name": "Asian sword fern", "id": 4
+    }, {
+    "name": "Australian umbrella tree, octopus tree", "id": 5
+    }, {
+    "name": "Australian-pine, horsetail tree", "id": 6
+    }, {
+    "name": "Beach naupaka", "id": 7
+    }, {
+    "name": "Beach naupaka, Hawaiian half-flower, hailstones", "id": 8
+    }, {
+    "name": "Beach vitex, roundleaf chastetree", "id": 9
+    }, {
+    "name": "Bishopwood, javawood", "id": 10
+    }, {
+    "name": "Brazilian jasmine, jazmin de trapo", "id": 11
+    }, {
+    "name": "Brazilian pepper, Florida Holly, Christmas berry", "id": 12
+    }, {
+    "name": "Britton's wild petunia, Mexican petunia", "id": 13
+    }, {
+    "name": "Burmareed, silkreed", "id": 14
+    }, {
+    "name": "Caesarweed", "id": 15
+    }, {
+    "name": "Camphor tree", "id": 16
+    }, {
+    "name": "Carrotwood", "id": 17
+    }, {
+    "name": "Cat's-claw vine", "id": 18
+    }, {
+    "name": "Chinese privet", "id": 19
+    }, {
+    "name": "Cogongrass, Japanese blood grass", "id": 20
+    }, {
+    "name": "Coral ardisia, scratchthroat, coral berry", "id": 21
+    }, {
+    "name": "Crested floatingheart", "id": 22
+    }, {
+    "name": "Earleaf acacia", "id": 23
+    }, {
+    "name": "Elephantgrass, napiergrass", "id": 24
+    }, {
+    "name": "Glossy privet", "id": 25
+    }, {
+    "name": "Gold coast jasmine", "id": 26
+    }, {
+    "name": "Gray sheoak, beefwood, Brazilian oak", "id": 27
+    }, {
+    "name": "Guava", "id": 28
+    }, {
+    "name": "Hydrilla, water thyme, Florida elodea, waterweed", "id": 29
+    }, {
+    "name": "Incised halberd fern", "id": 30
+    }, {
+    "name": "Indian laurel, Chinese banyan", "id": 31
+    }, {
+    "name": "Indian swampweed", "id": 32
+    }, {
+    "name": "Japanese climbing fern", "id": 33
+    }, {
+    "name": "Japanese honeysuckle", "id": 34
+    }, {
+    "name": "Java plum", "id": 35
+    }, {
+    "name": "Kudzu", "id": 36
+    }, {
+    "name": "Lantana, shrubverbena", "id": 37
+    }, {
+    "name": "Latherleaf, Asian snakeroot", "id": 38
+    }, {
+    "name": "Old World climbing fern, small-leaf climbing fern", "id": 39
+    }, {
+    "name": "Orchid tree, mountain ebony", "id": 40
+    }, {
+    "name": "Paragrass, buffalo grass, Scotch grass", "id": 41
+    }, {
+    "name": "Peruvian primrosewillow", "id": 42
+    }, {
+    "name": "Popcorntree, Chinese tallowtree", "id": 43
+    }, {
+    "name": "Portia tree, seaside mahoe", "id": 44
+    }, {
+    "name": "Punktree, paper-bark, cajeput", "id": 45
+    }, {
+    "name": "Rosary pea, blackeyed susan, crab's eye", "id": 46
+    }, {
+    "name": "Rose myrtle", "id": 47
+    }, {
+    "name": "Rose natalgrass", "id": 48
+    }, {
+    "name": "Sacred bamboo, heavenly bamboo", "id": 49
+    }, {
+    "name": "Santa maria, beauty leaf", "id": 50
+    }, {
+    "name": "Sapodilla", "id": 51
+    }, {
+    "name": "Sewervine", "id": 52
+    }, {
+    "name": "Shoebutton ardisia", "id": 53
+    }, {
+    "name": "Silktree, mimosa", "id": 54
+    }, {
+    "name": "Skunkvine", "id": 55
+    }, {
+    "name": "Small-leaf spiderwort, wandering jew", "id": 56
+    }, {
+    "name": "Sprenger's asparagus-fern", "id": 57
+    }, {
+    "name": "Strawberry guava", "id": 58
+    }, {
+    "name": "Surinam cherry, Cayenne cherry", "id": 59
+    }, {
+    "name": "Torpedograss, bullet grass, quack grass", "id": 60
+    }, {
+    "name": "Trompetilla", "id": 61
+    }, {
+    "name": "Tropical American watergrass", "id": 62
+    }, {
+    "name": "Tropical soda apple", "id": 63
+    }, {
+    "name": "Tuberous sword fern, Boston fern", "id": 64
+    }, {
+    "name": "Valamuerto", "id": 65
+    }, {
+    "name": "Water lettuce", "id": 66
+    }, {
+    "name": "Water spangles, water fern", "id": 67
+    }, {
+    "name": "Water-hyacinth, water-orchid", "id": 68
+    }, {
+    "name": "Water-spinach", "id": 69
+    }, {
+    "name": "Wedelia, creeping oxeye", "id": 70
+    }, {
+    "name": "Wild taro, dasheen, coco yam", "id": 71
+    }, {
+    "name": "Winged yam, white yam", "id": 72
+    }, {
+    "name": "Woman's tongue, Indian siris", "id": 73
+    }, {
+    "name": "Wright's nutrush", "id": 74
     }]
 }

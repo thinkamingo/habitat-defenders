@@ -1,0 +1,53 @@
+{
+    "type": "SpeciesCollection",
+    "species": [{
+    "name": "African jewelfish", "id": 1
+    }, {
+    "name": "Asian swamp eel", "id": 2
+    }, {
+    "name": "Black acara", "id": 3
+    }, {
+    "name": "Blackchin tilapia", "id": 4
+    }, {
+    "name": "Blue tilapia", "id": 5
+    }, {
+    "name": "Brown hoplo", "id": 6
+    }, {
+    "name": "Bullseye snakehead", "id": 7
+    }, {
+    "name": "Butterfly peacock", "id": 8
+    }, {
+    "name": "Clown knifefish", "id": 9
+    }, {
+    "name": "Common carp", "id": 10
+    }, {
+    "name": "Jaguar guapote", "id": 11
+    }, {
+    "name": "Mayan cichlid", "id": 12
+    }, {
+    "name": "Midas cichlid", "id": 13
+    }, {
+    "name": "Mozambique tilapia", "id": 14
+    }, {
+    "name": "Orinoco sailfin catfish", "id": 15
+    }, {
+    "name": "Oscar", "id": 16
+    }, {
+    "name": "Pike killifish", "id": 17
+    }, {
+    "name": "Rio Grande cichlid", "id": 18
+    }, {
+    "name": "Spotted tilapia", "id": 19
+    }, {
+    "name": "Suckermouth catfish", "id": 20
+    }, {
+    "name": "Vermiculated sailfin catfish", "id": 21
+    }, {
+    "name": "Walking catfish", "id": 22
+    }, {
+    "name": "Yellowbelly cichlid", "id": 23
+    }]
+}
+
+
+
